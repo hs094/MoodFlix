@@ -1,9 +1,14 @@
-name: Deploy to Production
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - prod
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -25,9 +30,13 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: Deploy to Production
-        run: |
-          echo "Deploying the build..."
-          # Add your deployment script here
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./build  # Change if your build directory is different
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
