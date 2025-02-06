@@ -40,4 +40,3 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4  :contentReference[oaicite:2]{index=2}
-`
