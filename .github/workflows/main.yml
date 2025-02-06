@@ -31,12 +31,13 @@ jobs:
         run: npm run build
 
       - name: Setup GitHub Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5  :contentReference[oaicite:0]{index=0}
 
       - name: Upload to GitHub Pages
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3  :contentReference[oaicite:1]{index=1}
         with:
           path: ./build  # Change if your build directory is different
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4  :contentReference[oaicite:2]{index=2}
+`
