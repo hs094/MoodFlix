@@ -1,9 +1,9 @@
 {
-  "name": "my-first-react-app",
+  "name": "moodflix",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://hs094.github.io/moodflix/",
+  "homepage": "https://hs094-moodflix.netlify.app/",
   "scripts": {
     "predeploy" : "npm run build",
     "deploy" : "gh-pages -d dist",
